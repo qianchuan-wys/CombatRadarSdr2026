@@ -23,16 +23,16 @@ apps/
 - `jam_rx_app.py` 会调用 `parser/gnuradio_frame_parser.py`、`phy.py`、`protocol.py`、`radio_profiles.py` 与 `server_comm.py` 完成完整接收链路。
 - `tx_app.py` 与 `jam_tx_app.py` 会调用 `phy.py`、`protocol.py`、`launch/message_value_generate.py` 等模块生成发射波形。
 
-## Payload 解析策略
+## 解析策略
 
 - `gui_launcher.py`
-  采用 `default` 解析策略，信息波 payload 固定按小端序解析。
-
-- `gui_launcher_info.py`
-  采用 `info_only` 解析策略，直接按信息波模式解析，payload 固定按小端序解析，不再自动切换端序。
+  解析两次干扰波，在干扰波等级到达三级后解析信息波。
 
 - `gui_launcher_onekey.py`
-  采用 `onekey_then_info` 解析策略，一级阶段解析干扰波密钥，后续转信息波解析，payload 固定按小端序解析，不再自动切换端序。
+  解析一次干扰波，在干扰波等级到达二级后解析信息波。。
+
+- `gui_launcher_info.py`
+  仅解析信息波。
 
 - `jam_rx_app.py`
   作为底层接收程序，仍支持 `--payload-endian little|big|auto`，但当前 GUI 入口均固定传入 `little`。

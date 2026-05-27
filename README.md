@@ -69,7 +69,7 @@ pip install -r requirements.txt
 - `gui_launcher_onekey.py`：先解析一次干扰波，在干扰波等级到达二级后，转向解析信息波。
 - `gui_launcher_info.py`：只解析信息波。
 
-## 6. 运行指南
+## 运行指南
 
 项目根目录下
 python3 ./apps/gui_launcher.py
