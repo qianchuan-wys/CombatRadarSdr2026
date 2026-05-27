@@ -73,3 +73,5 @@ pip install -r requirements.txt
 
 项目根目录下
 python3 ./apps/gui_launcher.py
+
+交流请联系 Yanshu Wang QQ:2942349330
